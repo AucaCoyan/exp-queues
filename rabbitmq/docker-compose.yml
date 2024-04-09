@@ -1,0 +1,18 @@
+name: rabbit_mq_orchestrator
+services:
+  rabbitmq3:
+
+    container_name: "rabbit_mq_orchestrator"
+
+    image: rabbitmq:3-management
+
+    environment:
+      - RABBITMQ_DEFAULT_USER=DigitalEcommerce
+      - RABBITMQ_DEFAULT_PASS=killsa
+      - RABBITMQ_DEFAULT_VHOST=DigitalEcommerce
+    ports:
+      # AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+      
